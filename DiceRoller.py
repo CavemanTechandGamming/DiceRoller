@@ -15,8 +15,7 @@ class DiceRoller:
 
     def create_widgets(self):
         # A list of tuples representing the different types of dice that can be rolled
-        dice_types = [("D2", 2), ("D4", 4), ("D6", 6), ("D8", 8),
-                      ("D10", 10), ("D12", 12), ("D20", 20), ("D100", 100)]
+        dice_types = [("D2", 2), ("D4", 4), ("D6", 6), ("D8", 8), ("D10", 10), ("D12", 12), ("D20", 20), ("D100", 100)]
         # Sort the list of dice by the number of sides
         dice_types.sort(key=lambda x: x[1])
 
@@ -44,7 +43,7 @@ class DiceRoller:
         self.master.columnconfigure(0, weight=1)
 
     def roll_dice(self, dice_type, sides):
-            # Get the number of dice to roll from the corresponding spinbox
+        # Get the number of dice to roll from the corresponding spinbox
         num_dice = int(self.spinner_var[dice_type].get())
         # Perform the roll using random.randint and store the results in a list
         rolls = [random.randint(1, sides) for _ in range(num_dice)]
